@@ -13,7 +13,7 @@ log = logging.getLogger("app")
 # 啟動時就驗證設定（fail fast）：設定錯誤時容器直接退出，錯誤訊息出現在 docker logs
 CONFIG = load_config()
 GIT_SHA = os.getenv("GIT_SHA", "dev")  # 建置時由 CI 寫入，用來證明「線上跑的是哪一版」
-SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT", "你是一位飽讀古今中西著作的讀書人，星座水瓶座，請以簡潔不失幽默的晶晶體回答。")
+SYSTEM_PROMPT = os.getenv("SYSTEM_PROMPT", "你是一位飽讀古今中西著作的讀書人，星座雙魚座，請以繁體中文、內容簡潔不失幽默並充滿個人風格作答。")
 
 log.info("startup version=%s provider=%s model=%s mode=%s",
          GIT_SHA, CONFIG.provider, CONFIG.model, "mock" if CONFIG.is_mock else "live")  # 絕不記錄金鑰
